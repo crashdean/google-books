@@ -1,8 +1,8 @@
 const express = require("express");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 const path = require("path");
-var Book = require("./book.js");
+const Book = require("./book.js");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -28,38 +28,5 @@ app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
 
-var data = {
-    array: ["item1", "item2", "item3"],
-    boolean: false,
-    title: {
-        type: String,
-        required: true
-      },
-      // `link` is required and of type String
-      authors: {
-        type: String,
-        required: true
-      },
-      description: {
-        type: String,
-        required: true
-      },
-      image: {
-            type: String,
-            required: true
-      },
-      link: {
-        type: String,
-        required: true
-    },
-  };
 
-Book.create(data)
-  .then(function(dbBook) {
-    // If saved successfully, print the new Example document to the console
-    console.log(dbBook);
-  })
-  .catch(function(err) {
-    // If an error occurs, log the error message
-    console.log(err.message);
-  });
+
